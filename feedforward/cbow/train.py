@@ -3,7 +3,7 @@ import torch.nn as nn
 
 from tqdm import tqdm
 
-from dataset import process_text
+from ..dataset import process_text
 from model import CBOW
 
 CONTEXT_SIZE = 2

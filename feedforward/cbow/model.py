@@ -20,7 +20,7 @@ class CBOW(nn.Module):
     def forward(self, inputs):
         input_vector = sum(self.embeddings(inputs)).view(1, -1)
 
-        hidden_layer = self.layer1(input_vector)
+        hidden_layer = F.relu(self.layer1(input_vector))
         output_layer = self.layer2(hidden_layer)
         output = self.softmax(output_layer)
         return output
